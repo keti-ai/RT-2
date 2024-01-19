@@ -8,7 +8,7 @@ caption = torch.randint(0, 20000, (1, 1024))
 
 # model: RT2
 model = RT2()
-
+model.cuda()
 # Run model on img and caption
-output = model(img, caption)
+output = model(img.cuda(), caption.cuda())
 print(output)  # (1, 1024, 20000)
